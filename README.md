@@ -10,7 +10,7 @@ Main analysis scripts for the HNRNPD multiomics study in EndoC-βH1 and RPE cell
 | [Long-read RNA-seq](scripts/long_read_rnaseq/) | Read preparation → minimap2 → IsoQuant → DESeq2 → GO/KEGG enrichment | [GSE350755](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350755) |
 | [TRAP-seq](scripts/trap_seq/) | Reference preparation → Bowtie2 → STAR → Salmon → DESeq2 → GO/KEGG enrichment | [GSE350756](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350756) |
 
-The three datasets are linked by [GSE350758](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350758). The repository contains 18 dataset-analysis scripts and one reusable enrichment script for integrated target-gene lists. Gene-list selection and overlaps were performed manually; figure plotting is outside these scripts.
+The three datasets are linked under GEO SuperSeries [GSE350758](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350758). The repository contains 18 dataset-analysis scripts and one reusable enrichment script for integrated target-gene lists.
 
 ## Using the scripts
 
