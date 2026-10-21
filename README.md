@@ -36,3 +36,5 @@ These labels identify the supplied lists; the script does not recreate or alter 
 `SCR`, `EX2`, `EX7` and `EX2EX7` denote scrambled control, exon 2 exclusion, exon 7 exclusion and combined exclusion. Comparisons are performed within cell type. Exploratory nominal-p results are labelled separately from BH-adjusted results. Enrichment input thresholds are configurable and should match the analysis being reproduced. TRAP-seq measures ribosome-associated RNA abundance; transcript-level differential abundance does not by itself establish differential transcript usage.
 
 Maintainer: Zhuofan Mou ([FredMou](https://github.com/FredMou)).
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23548482.svg)](https://doi.org/10.5281/zenodo.23548482)
