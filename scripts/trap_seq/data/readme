@@ -1,0 +1,3 @@
+TRAP reference files
+
+Generate rRNA_tRNA_combined.fasta using ../trap_prepare_reference.sh; the resulting large FASTA is not stored in this folder. Set REFERENCE_DIR to its local location in the preparation and Bowtie2 scripts. Genome and annotation download instructions are in ../README.md.
