@@ -1,10 +1,10 @@
 # TRAP-seq analysis
 
-Untrimmed FASTQs and processed count matrices: [GSE350756](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350756), within GSE350758. Both cell types have two biological replicates per condition.
+Untrimmed FASTQs and processed count matrices: [GSE350756](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350756), within GSE350758. Both cell types have two biological replicates per condition. For RPE, L3 and L4 label two libraries from the same biological sample, not separate sequencing lanes or additional biological replicates.
 
 | Script | Step |
 |---|---|
-| `trap_cutadapt.sh` | Trim adapters and read ends; combine trimmed RPE lanes |
+| `trap_cutadapt.sh` | Trim adapters and read ends; combine trimmed RPE libraries |
 | `trap_prepare_reference.sh` | Combine SILVA 138.2 and Rfam 15.0 rRNA/tRNA sequences |
 | `trap_bowtie2.sh` | Build the contaminant index and filter reads |
 | `trap_star.sh` | Build the genome index and align filtered reads |
@@ -19,7 +19,7 @@ Edit the settings at the top of each script. Run Bash scripts with `bash SCRIPT.
 
 `trap_cutadapt.sh` reproduces the sequencing service’s Cutadapt 4.9 command: adapter `NCTGTCTCTTATACACATCT` for both mates, removal of the first base from each mate (`-u 1 -U 1`), 3′ quality cutoff 22, minimum length 75 nt (EndoC-βH1) or 40 nt (RPE), error rate 0.11, minimum adapter overlap 5 and `--pair-filter=any`, using 8 cores.
 
-Set `RAW_DIR` to the untrimmed GEO FASTQs. EndoC inputs are `SAMPLE_R1.fastq.gz` and `SAMPLE_R2.fastq.gz`; RPE inputs are `SAMPLE_L3_R1.fastq.gz`, `SAMPLE_L3_R2.fastq.gz` and the corresponding L4 files. RPE lanes are trimmed separately, then concatenated separately for R1 and R2 within each replicate. Outputs are `ROOT/CELL/SAMPLE/reads/SAMPLE_R1.fastq.gz` and `SAMPLE_R2.fastq.gz`, ready for `trap_bowtie2.sh`; per-run Cutadapt reports are retained.
+Set `RAW_DIR` to the untrimmed GEO FASTQs. EndoC inputs are `SAMPLE_R1.fastq.gz` and `SAMPLE_R2.fastq.gz`; RPE inputs are `SAMPLE_L3_R1.fastq.gz`, `SAMPLE_L3_R2.fastq.gz` and the corresponding L4 files. RPE library files (L3 and L4) are trimmed separately, then concatenated separately for R1 and R2 within each biological sample. The original L3/L4 filename labels are retained. Outputs are `ROOT/CELL/SAMPLE/reads/SAMPLE_R1.fastq.gz` and `SAMPLE_R2.fastq.gz`, ready for `trap_bowtie2.sh`; per-run Cutadapt reports are retained.
 
 ## References and shared steps
 
@@ -40,4 +40,5 @@ Enrichment reads these workbooks. Set `LEVEL`, `COMPARISON` and `GTF`. Input sel
 ## Software
 
 Cutadapt 4.9; Bowtie2 2.5.4; STAR 2.7.11b; Salmon 1.10.3; gffread; wget/gzip/awk/sed. R: DESeq2 (methods: 1.44.0), openxlsx; enrichment additionally uses clusterProfiler, org.Hs.eg.db and rtracklayer. No plotting packages are needed.
+
 
