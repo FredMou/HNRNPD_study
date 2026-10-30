@@ -1,6 +1,6 @@
 # TRAP-seq analysis
 
-Untrimmed FASTQs and processed count matrices: [GSE350756](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350756), within GSE350758. Both cell types have two biological replicates per condition. For RPE, L3 and L4 label two libraries from the same biological sample, not separate sequencing lanes or additional biological replicates.
+Untrimmed FASTQs and processed count matrices: [GSE350756](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350756), within GSE350758. Both cell types have two biological replicates per condition. For RPE, two libraries (L3 and L4) were prepared from each biological sample using the same protocol with different starting RNA concentrations. Both libraries were sequenced.
 
 | Script | Step |
 |---|---|
