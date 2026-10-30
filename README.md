@@ -8,9 +8,9 @@ Main analysis scripts for the HNRNPD multiomics study in EndoC-βH1 and RPE cell
 |---|---|---|
 | [iCLIP-seq](scripts/iclip/) | STAR → UMI deduplication → PureCLIP → BindingSiteFinder → GO enrichment | [GSE350757](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350757) |
 | [Long-read RNA-seq](scripts/long_read_rnaseq/) | Read preparation → minimap2 → IsoQuant → DESeq2 → GO/KEGG enrichment | [GSE350755](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350755) |
-| [TRAP-seq](scripts/trap_seq/) | Reference preparation → Bowtie2 → STAR → Salmon → DESeq2 → GO/KEGG enrichment | [GSE350756](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350756) |
+| [TRAP-seq](scripts/trap_seq/) | Cutadapt → contaminant filtering (Bowtie2) → STAR → Salmon → DESeq2 → GO/KEGG enrichment | [GSE350756](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350756) |
 
-The three datasets are linked under GEO SuperSeries [GSE350758](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350758). The repository contains 18 dataset-analysis scripts and one reusable enrichment script for integrated target-gene lists.
+The three datasets are linked under GEO SuperSeries [GSE350758](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE350758). The repository contains 19 dataset-analysis scripts and one reusable enrichment script for integrated target-gene lists.
 
 ## Using the scripts
 
@@ -38,3 +38,4 @@ These labels identify the supplied lists; the script does not recreate or alter 
 Maintainer: Zhuofan Mou ([FredMou](https://github.com/FredMou)).
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23548482.svg)](https://doi.org/10.5281/zenodo.23548482)
+
